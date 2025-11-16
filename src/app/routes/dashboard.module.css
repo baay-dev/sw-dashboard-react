@@ -1,0 +1,17 @@
+.searchButton {
+    min-width: 50vw;
+}
+
+.searchButton fieldset {
+    border-radius: 24px;
+}
+
+.searchButtonContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.titleContainer {
+    display: flex;
+    justify-content: center;
+}

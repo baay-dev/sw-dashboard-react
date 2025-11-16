@@ -68,7 +68,9 @@ function Planets({searchValue}: PlanetsProps) {
             ))}
         </div>
 
-        {loadMoreButton()}
+        <div className="loadMoreButton">
+            {loadMoreButton()}
+        </div>
     </>)
 }
 

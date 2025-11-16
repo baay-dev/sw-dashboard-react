@@ -68,7 +68,9 @@ function Characters({searchValue}: CharacterProps) {
             ))}
         </div>
 
-        {loadMoreButton()}
+        <div className="loadMoreButton">
+            {loadMoreButton()}
+        </div>
     </>)
 }
 

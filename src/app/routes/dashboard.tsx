@@ -4,6 +4,7 @@ import {TabsEnum} from "../../types/tabs.enum.ts";
 import Planets from "./planets.tsx";
 import {useState} from "react";
 import Characters from "./characters.tsx";
+import classes from './dashboard.module.css'
 
 function Dashboard() {
     const [activeTab, setActiveTab] = useState(TabsEnum.CHARACTERS);
@@ -38,8 +39,12 @@ function Dashboard() {
     return (
         <Box>
             <Box sx={{ width: '100%' }}>
-                <div>
+                <div className={classes.titleContainer}>
+                    <h1>Star Wars Wiki</h1>
+                </div>
+                <div className={classes.searchButtonContainer}>
                     <TextField
+                        className={classes.searchButton}
                         id="outlined-basic"
                         placeholder={searchPlaceholder}
                         variant="outlined"
