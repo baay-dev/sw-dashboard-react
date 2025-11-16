@@ -11,3 +11,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.cardsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem;
+}

@@ -2,7 +2,6 @@ import {Box, Tab, Tabs, TextField} from "@mui/material";
 import * as React from "react";
 import {TabsEnum} from "../../types/tabs.enum.ts";
 import Planets from "./planets.tsx";
-import styles from "./dashboard.module.css";
 import {useState} from "react";
 
 function Dashboard() {
@@ -63,9 +62,7 @@ function Dashboard() {
                     <Tab value={TabsEnum.PLANETS} label="Planets" />
                 </Tabs>
             </Box>
-            <div className={styles.cardsContainer}>
                 {handleTabs()}
-            </div>
         </Box>
 
     )
