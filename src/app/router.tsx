@@ -10,4 +10,6 @@ export const router = createBrowserRouter([
                 element: <Dashboard/>,
                 children: []},
         ]},
-]);
+], {
+    basename: '/sw-dashboard-react/'
+});
