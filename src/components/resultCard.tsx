@@ -8,7 +8,7 @@ interface ResultCardProps {
 
 function ResultCard({title, description}: ResultCardProps) {
     return (
-        <Card sx={{ maxWidth: 345 }}>
+        <Card sx={{ width: 345,  }}>
             <CardActionArea>
                 <CardContent>
                     <Typography gutterBottom variant="h5" component="div">

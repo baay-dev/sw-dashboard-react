@@ -1,21 +1,35 @@
-import {Box, Tab, Tabs} from "@mui/material";
+import {Box, Tab, Tabs, TextField} from "@mui/material";
 import * as React from "react";
 import {TabsEnum} from "../../types/tabs.enum.ts";
 import Planets from "./planets.tsx";
 import styles from "./dashboard.module.css";
+import {useState} from "react";
 
 function Dashboard() {
-    const [activeTab, setActiveTab] = React.useState(TabsEnum.CHARACTERS);
+    const [activeTab, setActiveTab] = useState(TabsEnum.CHARACTERS);
+    const [searchValue, setSearchValue] = useState('');
+    const characterPlaceholder = 'Annakin, Luke...';
     const handleChange = (_event: React.SyntheticEvent, newValue: TabsEnum) => {
         setActiveTab(newValue);
+        switch (newValue) {
+            case TabsEnum.PLANETS:
+                setSearchPlaceholder('Tattooine, Hoth...')
+                break;
+            case TabsEnum.CHARACTERS:
+                setSearchPlaceholder(characterPlaceholder)
+                break;
+            default:
+                setSearchPlaceholder(characterPlaceholder)
+        }
     };
+    const [searchPlaceholder, setSearchPlaceholder] = useState(characterPlaceholder);
 
     function handleTabs() {
         switch (activeTab) {
             case TabsEnum.CHARACTERS:
                 return <p>CHARACTERS</p>
             case TabsEnum.PLANETS:
-                return <Planets/>
+                return <Planets searchValue={searchValue}/>
             default:
                 return <p>CHARACTERS</p>
         }
@@ -24,6 +38,16 @@ function Dashboard() {
     return (
         <Box>
             <Box sx={{ width: '100%' }}>
+                <div>
+                    <TextField
+                        id="outlined-basic"
+                        placeholder={searchPlaceholder}
+                        variant="outlined"
+                        value={searchValue}
+                        onChange={(e) => setSearchValue(e.target.value)}
+                    />
+                </div>
+
                 <Tabs
                     value={activeTab}
                     onChange={handleChange}
