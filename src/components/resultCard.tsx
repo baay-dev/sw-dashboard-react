@@ -1,5 +1,4 @@
-import {Card, CardActionArea, CardContent, Typography, CardActions, IconButton} from '@mui/material';
-import FavoriteIcon from '@mui/icons-material/Favorite';
+import {Card, CardContent, Typography, CardActions} from '@mui/material';
 
 interface ResultCardProps {
     title: string;
@@ -8,8 +7,7 @@ interface ResultCardProps {
 
 function ResultCard({title, description}: ResultCardProps) {
     return (
-        <Card sx={{ width: 345,  }}>
-            <CardActionArea>
+        <Card variant="outlined" sx={{ width: 345}}>
                 <CardContent>
                     <Typography gutterBottom variant="h5" component="div">
                         {title}
@@ -18,11 +16,10 @@ function ResultCard({title, description}: ResultCardProps) {
                         {description}
                     </Typography>
                 </CardContent>
-            </CardActionArea>
             <CardActions>
-                <IconButton>
-                    <FavoriteIcon />
-                </IconButton>
+                {/*<IconButton>*/}
+                {/*    <FavoriteIcon />*/}
+                {/*</IconButton>*/}
             </CardActions>
         </Card>
     );
