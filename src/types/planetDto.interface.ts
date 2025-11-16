@@ -8,8 +8,8 @@ export interface PlanetDtoInterface {
     terrain: string;
     surface_water: string;
     population: string;
-    residents: string[];
-    films: string[];
+    residents: Array<string>;
+    films: Array<string>;
     created: string;
     edited: string;
     url: string;

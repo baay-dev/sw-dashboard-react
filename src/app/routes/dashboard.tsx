@@ -3,6 +3,7 @@ import * as React from "react";
 import {TabsEnum} from "../../types/tabs.enum.ts";
 import Planets from "./planets.tsx";
 import {useState} from "react";
+import Characters from "./characters.tsx";
 
 function Dashboard() {
     const [activeTab, setActiveTab] = useState(TabsEnum.CHARACTERS);
@@ -26,11 +27,11 @@ function Dashboard() {
     function handleTabs() {
         switch (activeTab) {
             case TabsEnum.CHARACTERS:
-                return <p>CHARACTERS</p>
+                return <Characters searchValue={searchValue}/>
             case TabsEnum.PLANETS:
                 return <Planets searchValue={searchValue}/>
             default:
-                return <p>CHARACTERS</p>
+                return <Characters searchValue={searchValue}/>
         }
     }
 
